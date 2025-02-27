@@ -1,4 +1,18 @@
 Calculador de azimuth
+Versión 3.0 - 27/02/25
+
+http://craeg.remtronic.com.mx/herramientas.html
+
+Cambios:
+
+1.  Se previene que los clics en el contenedor de controles se propaguen al mapa subyacente, evitando acciones no deseadas.
+2.  Se actualiza la nota de licencia a GNU General Public License v2.0.
+3.  Se mantiene la funcionalidad de evitar clics fuera del mapa.
+4.  Se conserva la solución de dividir la trayectoria en segmentos al cruzar el borde (según Versión 2.7).
+5.  Se agrega la funcionalidad de centrar el mapa en el QTH asignado (según Versión 2.9).
+6.  Se mantienen todas las demás funcionalidades (cálculo de heading, distancia, conversión de grid, zoom automático, etc.).
+
+Calculador de azimuth
 Versión 2.9 - 27/02/25
 
 http://craeg.remtronic.com.mx/herramientas.html
