@@ -1,0 +1,89 @@
+Calculador de azimuth
+Versión 2.9 - 27/02/25
+
+http://craeg.remtronic.com.mx/herramientas.html
+
+Cambios:
+1. Se conserva la solución de dividir la trayectoria en segmentos al cruzar el borde (según Versión 2.7).
+2. Se agrega la funcionalidad de centrar el mapa en el QTH asignado, utilizando:
+   map.setView(homeCoordinates, map.getZoom(), { animate: true });
+   para que, al establecer el QTH, la vista se recalcule con el QTH en el centro.
+3. Se mantienen todas las demás funcionalidades (cálculo de heading, distancia, conversión de grid, zoom automático, etc.).
+
+Calculador de azimuth
+Versión 2.7 - 27/02/25
+
+http://craeg.remtronic.com.mx/herramientas.html
+
+Cambios:
+
+1. Se amplía la detección de cruces de la antimeridiana mediante la verificación de si la diferencia
+   absoluta de longitudes entre puntos consecutivos es mayor a 180°.
+2. Se calcula el factor de interpolación para determinar el punto de intersección con el borde:
+   - Si p1 está en el lado positivo, se asume cruce por 180°; si está en el negativo, por –180°.
+3. Se dividen la trayectoria en dos segmentos: uno desde el QTH hasta el borde (incluyendo el punto
+   de intersección) y otro desde el borde opuesto hasta el DX.
+4. Se dibujan por separado los segmentos para evitar que Leaflet conecte con una línea recta los extremos del mapa.
+5. Se mantienen los demás ajustes (separación de formularios, zoom automático según boundingbox, maxBounds).
+
+
+Calculador de azimuth
+Versión 2.4 - 27/02/25
+
+http://craeg.remtronic.com.mx/herramientas.html
+
+Cambios:
+
+1. Se mejora la corrección de continuidad de la longitud en la traza de la geodésica,
+   usando bucles while para evitar saltos bruscos cuando se cruza muy cerca de los polos
+   o cuando el heading pasa de 359° a 0°.
+2. Se mantiene la separación extra entre la sección "Ingresa Grid Square" y "Buscar ubicación".
+3. Se conserva el zoom automático (Nominatim) según el boundingbox de la búsqueda.
+4. Se evita el clic fuera del mapa con maxBounds.
+5. Ajustes menores de estilo y mensajes al usuario.
+
+Calculador de azimuth
+Versión 2.2 - 27/02/25
+
+http://craeg.remtronic.com.mx/herramientas.html
+
+Cambios:
+
+1. Se corrige el trazo de la geodésica para evitar la línea “recta” al cruzar ±180° (ajuste de continuidad punto a punto).
+2. Se añade maxBounds para impedir clic y arrastre fuera del mapa.
+3. Se agrega mayor separación entre la sección de “Ingresar GRID” y la de “Búsqueda de lugar”.
+4. Se integra zoom automático según la precisión de la búsqueda (uso de boundingbox de Nominatim).
+5. Se mantiene el cálculo de distancia, capas topográfica y satélite.
+6. Ajustes menores de estilo y mensajes al usuario.
+
+Calculador de azimuth
+Versión 2.1 - 27/02/25
+
+http://craeg.remtronic.com.mx/herramientas.html
+
+Cambios:
+
+1. Se agrega campo de búsqueda por nombre de ubicación (geocoding con Nominatim).
+2. Se ajusta configuración del mapa para evitar la repetición de mosaicos (noWrap) y minimizar el efecto “cinta infinita”.
+3. Se corrige bug en la traza de la línea de gran círculo al presionar en el extremo opuesto (se elimina la corrección manual de ±180°).
+4. Se conserva el cálculo de distancia y capas topográfica/satélite.
+5. Se agrega mensaje de progreso y resultado en la búsqueda de ubicaciones.
+6. Ajustes menores de estilo y de mensajes al usuario.
+
+
+Calculador de azimuth
+Version 2.0 28/01/25
+
+http://craeg.remtronic.com.mx/herramientas.html
+
+Cambios:
+
+1. Se agrega el calculo de distancia.
+2. Se eliminan ventanas emergente innecesarias.
+3. Se corrige validación de minúsculas y mayúsculas al ingresar grid
+4. Se corrige limitación de desplazamiento del mapa.
+5. Se agrega capa topográfica.
+6. Corrección de errores de curva geodésica.
+7. Se facilita el procedimiento de asignación del punto QTH
+8. Se añade instructivo de uso.
+9. Notas de licencia.
